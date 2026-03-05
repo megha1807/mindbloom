@@ -1,0 +1,114 @@
+/* ===== App Home (Logged In) ===== */
+
+.app-container {
+  min-height: 100vh;
+  background: #f4f6f9;
+  padding: 40px 60px;
+}
+
+.app-header {
+  margin-bottom: 40px;
+}
+
+.app-header h1 {
+  font-size: 2rem;
+  color: #111827;
+  margin-bottom: 5px;
+}
+
+.app-header p {
+  color: #6b7280;
+}
+
+.app-stats {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 250px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h2 {
+  font-size: 2rem;
+  color: #4f46e5;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.app-actions {
+  margin-top: 40px;
+}
+
+.app-actions button {
+  padding: 12px 25px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.app-actions button:hover {
+  background: #3730a3;
+}
+
+/* ===== BADGES ===== */
+
+.badges-section{
+margin-top:30px;
+text-align:center;
+}
+
+.badges-grid{
+display:flex;
+justify-content:center;
+gap:12px;
+margin-top:15px;
+flex-wrap:wrap;
+}
+
+.badge{
+ background: linear-gradient(135deg,#6a5acd,#836fff);
+  color: white;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.react-calendar-heatmap .color-empty {
+  fill: #eeeeee;
+}
+
+.react-calendar-heatmap .color-scale-1 {
+  fill: #c6e48b;
+}
+
+.react-calendar-heatmap .color-scale-2 {
+  fill: #7bc96f;
+}
+
+.react-calendar-heatmap .color-scale-3 {
+  fill: #239a3b;
+}
+
+.react-calendar-heatmap .color-scale-4 {
+  fill: #196127;
+}

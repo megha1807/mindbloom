@@ -1,0 +1,84 @@
+.timer-container {
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f3f4f6;
+  padding: 40px 20px;
+}
+
+.timer-card {
+  background: white;
+  padding: 50px;
+  width: 400px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
+
+.mode-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.mode-buttons button {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #e5e7eb;
+}
+
+.mode-buttons .active {
+  background: #4f46e5;
+  color: white;
+}
+
+.circle-wrapper {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px auto;
+}
+
+.time-text {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  right: 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #111827;
+}
+
+.timer-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.timer-buttons button {
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #4f46e5;
+  color: white;
+  transition: 0.3s;
+}
+
+.timer-buttons button:hover {
+  background: #4338ca;
+}
+
+.reset-btn {
+  background: #ef4444 !important;
+}
+
+.session-count {
+  margin-top: 25px;
+  font-size: 14px;
+  color: #6b7280;
+}

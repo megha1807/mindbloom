@@ -1,0 +1,32 @@
+.features-page {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.features-page h2 {
+  margin-bottom: 50px;
+  font-size: 28px;
+}
+
+.features-grid {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.feature-box {
+  width: 280px;
+  padding: 30px;
+  background: white;
+  border-radius: 16px;
+  text-decoration: none;
+  color: #111827;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}

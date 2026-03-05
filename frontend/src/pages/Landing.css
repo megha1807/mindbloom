@@ -1,0 +1,70 @@
+/* ===== Landing Page ===== */
+
+.landing-container {
+  height: 100vh;
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.landing-content {
+  max-width: 700px;
+}
+
+.landing-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.landing-content h1 span {
+  color: #facc15;
+}
+
+.landing-content p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.landing-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.landing-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.landing-btn.primary {
+  background: white;
+  color: #4f46e5;
+}
+
+.landing-btn.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.landing-btn.secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.landing-btn.secondary:hover {
+  background: white;
+  color: #4f46e5;
+}

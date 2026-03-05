@@ -1,0 +1,12 @@
+.dashboard-container {
+  padding: 60px;
+  background: #f3f4f6;
+  min-height: 100vh;
+}
+
+.chart-card {
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+}
