@@ -1,70 +1,142 @@
-/* ===== Landing Page ===== */
-
 .landing-container {
-  height: 100vh;
-  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  min-height: calc(100vh - 80px);
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
-  text-align: center;
-  padding: 20px;
+  padding: 80px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background light blobs */
+.landing-container::before {
+  content: "";
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: rgba(99, 102, 241, 0.15);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
+}
+
+.landing-container::after {
+  content: "";
+  position: absolute;
+  bottom: -10%;
+  right: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: rgba(236, 72, 153, 0.12);
+  border-radius: 50%;
+  filter: blur(120px);
+  pointer-events: none;
 }
 
 .landing-content {
-  max-width: 700px;
+  max-width: 900px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.landing-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 40px;
+  color: #a5b4fc;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 24px;
 }
 
 .landing-content h1 {
-  font-size: 3rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.15;
   margin-bottom: 20px;
 }
 
 .landing-content h1 span {
-  color: #facc15;
+  background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 50%, #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .landing-content p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  opacity: 0.9;
+  font-size: 1.15rem;
+  margin-bottom: 36px;
+  color: var(--text-secondary);
   line-height: 1.6;
+  max-width: 650px;
 }
 
 .landing-buttons {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  gap: 16px;
+  margin-bottom: 72px;
 }
 
-.landing-btn {
-  padding: 12px 30px;
-  border-radius: 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
+/* Feature Showcase Grid */
+.landing-showcase {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  width: 100%;
 }
 
-.landing-btn.primary {
-  background: white;
-  color: #4f46e5;
+.showcase-card {
+  padding: 28px 24px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.landing-btn.primary:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+.showcase-icon {
+  font-size: 2rem;
+  margin-bottom: 6px;
 }
 
-.landing-btn.secondary {
-  background: transparent;
-  border: 2px solid white;
-  color: white;
+.showcase-card h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
 }
 
-.landing-btn.secondary:hover {
-  background: white;
-  color: #4f46e5;
+.showcase-card p {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+/* Floating Animations */
+@keyframes hoverFloat {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+.float-1 {
+  animation: hoverFloat 6s ease-in-out infinite;
+}
+
+.float-2 {
+  animation: hoverFloat 6s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+.float-3 {
+  animation: hoverFloat 6s ease-in-out infinite;
+  animation-delay: 4s;
 }

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "../api";
 
-function Login() {
+function Login({ onLogin }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -16,8 +16,8 @@ function Login() {
         password,
       });
 
-      localStorage.setItem("token", res.data.token);
-    navigate("/");
+      onLogin(res.data.token);
+      navigate("/");
     } catch (err) {
       setError("Invalid email or password");
     }

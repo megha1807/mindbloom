@@ -1,12 +1,24 @@
 .dashboard-container {
-  padding: 60px;
-  background: #f3f4f6;
-  min-height: 100vh;
+  padding: 40px 48px;
+  min-height: calc(100vh - 80px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.dashboard-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 24px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .chart-card {
-  background: white;
-  padding: 30px;
-  border-radius: 16px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  padding: 32px;
+}
+
+.chart-card h3 {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 20px;
 }

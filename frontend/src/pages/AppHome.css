@@ -1,114 +1,272 @@
-/* ===== App Home (Logged In) ===== */
-
 .app-container {
-  min-height: 100vh;
-  background: #f4f6f9;
-  padding: 40px 60px;
-}
-
-.app-header {
-  margin-bottom: 40px;
-}
-
-.app-header h1 {
-  font-size: 2rem;
-  color: #111827;
-  margin-bottom: 5px;
-}
-
-.app-header p {
-  color: #6b7280;
-}
-
-.app-stats {
+  min-height: calc(100vh - 80px);
+  padding: 40px 48px;
   display: flex;
-  gap: 25px;
+  flex-direction: column;
+  gap: 32px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Welcome Header & Affirmation Card */
+.app-welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  gap: 24px;
   flex-wrap: wrap;
 }
 
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+.welcome-text h1 {
+  font-size: 2.2rem;
+  background: linear-gradient(135deg, #a5b4fc 0%, #6366f1 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 6px;
 }
 
-.card:hover {
-  transform: translateY(-5px);
+.current-date {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  font-weight: 500;
 }
 
-.card h2 {
+.affirmation-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--border-radius-sm);
+  padding: 16px 20px;
+  max-width: 450px;
+  flex: 1;
+}
+
+.affirmation-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--secondary);
+  letter-spacing: 0.05em;
+  margin-bottom: 6px;
+}
+
+.affirmation-text {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* Dashboard Grid Layout */
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 32px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Stats Cards */
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.app-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-icon {
   font-size: 2rem;
-  color: #4f46e5;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.card p {
-  color: #6b7280;
+.stat-card h2 {
+  font-size: 2.2rem;
+  margin-bottom: 4px;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
   font-weight: 500;
 }
 
 .app-actions {
-  margin-top: 40px;
+  margin-top: 12px;
 }
 
-.app-actions button {
-  padding: 12px 25px;
-  background: #4f46e5;
+/* Wellness Breathing Corner */
+.wellness-corner {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.wellness-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.breathing-session {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 28px;
+  width: 100%;
+}
+
+.breathing-circle-outer {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: rgba(99, 102, 241, 0.05);
+  border: 2px dashed rgba(99, 102, 241, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 1s ease-in-out;
+}
+
+.breathing-circle-inner {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  box-shadow: var(--glow-primary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: white;
-  border: none;
-  border-radius: 8px;
+  font-weight: 700;
+  transition: all 1s ease-in-out;
+}
+
+/* Animated phases for breathing */
+.breathing-circle-outer.inhale {
+  transform: scale(1.2);
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.5);
+}
+
+.breathing-circle-outer.inhale .breathing-circle-inner {
+  transform: scale(1.25);
+  background: var(--primary-gradient);
+}
+
+.breathing-circle-outer.hold {
+  transform: scale(1.2);
+  background: rgba(16, 185, 129, 0.15);
+  border-color: rgba(16, 185, 129, 0.5);
+}
+
+.breathing-circle-outer.hold .breathing-circle-inner {
+  transform: scale(1.25);
+  background: var(--accent-gradient);
+  box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+}
+
+.breathing-circle-outer.exhale {
+  transform: scale(1.0);
+  background: rgba(236, 72, 153, 0.15);
+  border-color: rgba(236, 72, 153, 0.5);
+}
+
+.breathing-circle-outer.exhale .breathing-circle-inner {
+  transform: scale(0.9);
+  background: var(--secondary-gradient);
+  box-shadow: var(--glow-secondary);
+}
+
+.breath-action {
+  font-size: 1rem;
+}
+
+.breath-count {
+  font-size: 0.8rem;
+  opacity: 0.8;
+  margin-top: 2px;
+}
+
+/* Achievements */
+.badges-section {
+  padding: 32px;
+}
+
+.badges-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+  border-radius: var(--border-radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  transition: transform 0.2s ease;
+}
+
+.badge-item:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.badge-icon {
+  font-size: 1.5rem;
+}
+
+.badge-text {
   font-weight: 600;
-  cursor: pointer;
-  transition: background 0.3s ease;
+  font-size: 0.9rem;
+  color: var(--text-primary);
 }
 
-.app-actions button:hover {
-  background: #3730a3;
+.empty-badges {
+  color: var(--text-muted);
+  font-size: 0.9rem;
 }
 
-/* ===== BADGES ===== */
-
-.badges-section{
-margin-top:30px;
-text-align:center;
-}
-
-.badges-grid{
-display:flex;
-justify-content:center;
-gap:12px;
-margin-top:15px;
-flex-wrap:wrap;
-}
-
-.badge{
- background: linear-gradient(135deg,#6a5acd,#836fff);
-  color: white;
-  padding: 10px 16px;
-  border-radius: 20px;
-  font-weight: 500;
-  font-size: 14px;
-}
-
-.react-calendar-heatmap .color-empty {
-  fill: #eeeeee;
-}
-
-.react-calendar-heatmap .color-scale-1 {
-  fill: #c6e48b;
-}
-
-.react-calendar-heatmap .color-scale-2 {
-  fill: #7bc96f;
-}
-
-.react-calendar-heatmap .color-scale-3 {
-  fill: #239a3b;
-}
-
-.react-calendar-heatmap .color-scale-4 {
-  fill: #196127;
+.loading-text {
+  text-align: center;
+  color: var(--text-secondary);
+  font-style: italic;
+  padding: 40px;
 }

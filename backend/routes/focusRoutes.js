@@ -7,12 +7,13 @@ const mongoose = require("mongoose");
 // Save session
 router.post("/", verifyToken, async (req, res) => {
   try {
-    const { type, duration } = req.body;
+    const { type, duration, taskId } = req.body;
 
     const session = new FocusSession({
       user: req.userId,
       type,
       duration,
+      taskId: taskId || null,
     });
 
     await session.save();

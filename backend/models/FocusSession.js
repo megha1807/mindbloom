@@ -12,6 +12,11 @@ const focusSessionSchema = new mongoose.Schema({
     required: true,
   },
   duration: Number,
+  taskId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "StudyTask",
+    default: null,
+  },
   completedAt: {
     type: Date,
     default: Date.now,

@@ -16,41 +16,57 @@ function GoalTracker() {
   }, []);
 
   const fetchGoals = async () => {
-    const res = await axios.get("http://localhost:5000/api/goals", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    setGoals(res.data);
+    try {
+      const res = await axios.get("http://localhost:5000/api/goals", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setGoals(res.data);
+    } catch (err) {
+      console.error("Error fetching goals", err);
+      if (err.response && err.response.status === 401) {
+        localStorage.removeItem("token");
+        window.location.href = "/login";
+      }
+    }
   };
 
   const fetchSessionCount = async () => {
-    const res = await axios.get("http://localhost:5000/api/focus/count", {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    setSessionCount(res.data.count);
+    try {
+      const res = await axios.get("http://localhost:5000/api/focus/count", {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      setSessionCount(res.data.count);
+    } catch (err) {
+      console.error("Error fetching focus count", err);
+    }
   };
 
   const createGoal = async () => {
     if (!name || !target) return;
 
-    await axios.post(
-      "http://localhost:5000/api/goals",
-      { name, target },
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
-
-    setName("");
-    setTarget("");
-    fetchGoals();
+    try {
+      await axios.post(
+        "http://localhost:5000/api/goals",
+        { name, target },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+      setName("");
+      setTarget("");
+      fetchGoals();
+    } catch (err) {
+      console.error("Error creating goal", err);
+    }
   };
 
   const deleteGoal = async (id) => {
-    await axios.delete(`http://localhost:5000/api/goals/${id}`, {
-      headers: { Authorization: `Bearer ${token}` },
-    });
-
-    fetchGoals();
+    try {
+      await axios.delete(`http://localhost:5000/api/goals/${id}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      fetchGoals();
+    } catch (err) {
+      console.error("Error deleting goal", err);
+    }
   };
 
   return (
