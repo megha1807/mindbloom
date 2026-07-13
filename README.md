@@ -3,11 +3,11 @@ A productivity and mental wellness web app for students to stay focused, track s
 
 📸 Screenshots
 **Dashboard**
-![MindBloom Dashboard](https://github.com/user-attachments/assets/da93d1b3-b1dd-4a48-a1a2-648640737832)
-**Home Page**
-![Home Page](https://github.com/user-attachments/assets/818e13c6-098e-49d9-98b2-645ab10d75b0)
-**Features Page**
-![Features Page](https://github.com/user-attachments/assets/44584522-d53a-44d1-b7eb-596b6286cab8)
+![MindBloom Dashboard](./screenshots/dashboard.png)
+**Mood Tracker**
+![Mood Tracker](./screenshots/mood-tracker.png)
+**Tools & Features**
+![Tools Page](./screenshots/tools.png)
 
 
 🚀 **Features**
